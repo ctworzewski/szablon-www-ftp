@@ -1,0 +1,140 @@
+Options +Indexes
+
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+ order allow,deny
+ deny from all
+</Files>
+
+<IfModule mod_autoindex.c>
+  IndexOptions IgnoreCase FancyIndexing HTMLTable SuppressHTMLPreamble FoldersFirst VersionSort NameWidth=* DescriptionWidth=* XHTML IconHeight=16 IconWidth=16 Charset=UTF-8
+
+  IndexOrderDefault Ascending Name
+
+  IndexStyleSheet /and-index/style.css
+  HeaderName /and-index/header.html
+  ReadmeName /and-index/footer.html
+
+  IndexIgnoreReset ON
+  IndexIgnore favicon.ico
+
+  DefaultIcon /and-index/icons/file-text.svg
+  AddIcon /and-index/icons/back.svg ..
+  AddIcon /and-index/icons/github.svg .github
+  AddIcon /and-index/icons/nodejs.svg node_modules
+  AddIcon /and-index/icons/file-directory.svg ^^DIRECTORY^^
+
+  AddIcon /and-index/icons/file-binary.svg .com .exe
+  AddIcon /and-index/icons/file-code.svg .c .h .mustache .rust .source .apache .yml .jade
+  AddIcon /and-index/icons/file-media.svg .png .jpg .jpeg .webp .gif .bmp .mp4 .webm .ogv .mov .ico
+  AddIcon /and-index/icons/file-pdf.svg .pdf
+  AddIcon /and-index/icons/file-text.svg .txt .srt README readme Procfile
+  AddIcon /and-index/icons/file-zip.svg .zip .z .gz .Z .tgz .tar.gz .tar .rar
+  AddIcon /and-index/icons/gear.svg .htaccess .env .env-dev .env-production .env-staging
+  AddIcon /and-index/icons/config.svg .conf .ini .cfg .prefs
+  AddIcon /and-index/icons/less.svg .less
+  AddIcon /and-index/icons/css.svg .css
+  AddIcon /and-index/icons/html.svg .html .htm
+  AddIcon /and-index/icons/coffee.svg .coffee
+  AddIcon /and-index/icons/java.svg .java
+  AddIcon /and-index/icons/markdown.svg .markdown .md
+  AddIcon /and-index/icons/eslint.svg *.eslintignore *.eslintrc.js *.eslintrc.json *.eslintrc *.eslintrc.yml
+  AddIcon /and-index/icons/webpack.svg webpack.config.js
+  AddIcon /and-index/icons/rollup.svg rollup.config.js
+  AddIcon /and-index/icons/postcss.svg postcss.config.js *.postcssrc *.postcssrc.json *.postcssrc.js *.postcssrc.yml
+  AddIcon /and-index/icons/grunt.svg gruntfile.js Gruntfile.js
+  AddIcon /and-index/icons/gulp.svg gulpfile.js Gulpfile.js
+  AddIcon /and-index/icons/js.svg .js
+  AddIcon /and-index/icons/composer.svg composer.json composer.lock composer.phar
+  AddIcon /and-index/icons/bower.svg bower.json
+  AddIcon /and-index/icons/npm.svg package.json package-lock.json
+  AddIcon /and-index/icons/settings.svg .json
+  AddIcon /and-index/icons/mustache.svg .mustache
+  AddIcon /and-index/icons/php.svg .php
+  AddIcon /and-index/icons/python.svg .py
+  AddIcon /and-index/icons/ruby.svg .rb
+  AddIcon /and-index/icons/rust.svg .rust
+  AddIcon /and-index/icons/sass.svg .sass
+  AddIcon /and-index/icons/scss.svg .scss
+  AddIcon /and-index/icons/svg.svg .svg .svgx .eps
+  AddIcon /and-index/icons/xml.svg .xml
+  AddIcon /and-index/icons/typescript.svg .ts
+  AddIcon /and-index/icons/vue.svg .vue
+  AddIcon /and-index/icons/yarn.svg yarn.lock
+  AddIcon /and-index/icons/babel.svg *.babelrc
+  AddIcon /and-index/icons/git.svg *.gitignore *.gitattributes
+  AddIcon /and-index/icons/editor-config.svg .editorconfig
+  AddIcon /and-index/icons/shopify.svg .liquid
+  AddIcon /and-index/icons/nunjucks.svg .nunjucks
+  AddIcon /and-index/icons/pug.svg .pug
+  AddIcon /and-index/icons/adobe-photoshop.svg .psd
+  AddIcon /and-index/icons/adobe-illustrator.svg .ai
+  AddIcon /and-index/icons/stylus.svg .styl
+  AddIcon /and-index/icons/terminal.svg .sh .bash
+  AddIcon /and-index/icons/database.svg .sql .mysql .sqlite .dsql .db
+  AddIcon /and-index/icons/vagrant.svg vagrantfile Vagrantfile
+  AddIcon /and-index/icons/file-word.svg .doc .docx
+  AddIcon /and-index/icons/file-excel.svg .xls .xlsx
+  AddIcon /and-index/icons/yaml.svg .yml .yaml
+  AddIcon /and-index/icons/brainfuck.svg .b
+  AddIcon /and-index/icons/cobol.svg .cbl .cob .cpy
+  AddIcon /and-index/icons/docker.svg docker-compose.yml
+  AddIcon /and-index/icons/VirtualBox.svg .ova .vbox
+
+  AddDescription "MPEG Layer 3 Format" .mp3
+  AddDescription "MPEG Layer 4 Format" .mp4
+  AddDescription "SubRip subtitles format" .srt
+  AddDescription "GZIP compressed TAR archive" .tgz .tar.gz
+  AddDescription "GZIP compressed archive" .Z .z .gz .zip
+  AddDescription "RAR compressed archive" .rar
+  AddDescription "TAR compressed archive" .tar
+  AddDescription "ZIP compressed archive" .zip
+  AddDescription "Aplikacja Windows" .exe
+  AddDescription "Common Gateway Interface" .cgi
+  AddDescription "Joint Photographics Experts Group" .jpg .jpeg .jpe
+  AddDescription "Graphic Interchange Format" .gif
+  AddDescription "Portable Network Graphic" .png
+  AddDescription "Vector graphic" .ps .ai .eps
+  AddDescription "Hypertext Markup Language" .html .shtml .htm
+  AddDescription "Cascading Style Sheet" .css
+  AddDescription "DocType Definition" .dtd
+  AddDescription "Extensible Markup Language" .xml
+  AddDescription "Win32 compressed HTML help" .chm
+  AddDescription "Adobe Portable Document Format" .pdf
+  AddDescription "Plain text file" .txt .nfo .faq .readme
+  AddDescription "Unix man page" .man
+  AddDescription "Email data" .eml .mbox
+  AddDescription "Microsoft Word document" .doc .docx
+  AddDescription "Microsoft Excel document" .xls .xlsx
+  AddDescription "PHP: Hypertext Preprocessor script" .php  .php3 .php4
+  AddDescription "PHP: Hypertext Preprocessor source code" .phps
+  AddDescription "JavaScript Object Notation" .json
+  AddDescription "JavaScript" .js
+  AddDescription "Java code"  .java
+  AddDescription "Unix shell script" .sh .shar .csh .ksh .command
+  AddDescription "Mac OS X shell script" .command
+  AddDescription "Configuration file" .conf
+  AddDescription "Mac OS X terminal" .term
+  AddDescription "BitTorrent file" .torrent
+  AddDescription "Windows link" .lnk .url
+  AddDescription "Scalable Vector Graphic" .svg
+  AddDescription "OpenDocument Text" .odt
+  AddDescription "OpenDocument Spreadsheet" .ods
+  AddDescription "OpenDocument Presentation" .odp
+  AddDescription "OpenDocument Graphics" .odg
+  AddDescription "OpenDocument Chart" .odc
+  AddDescription "OpenDocument Formula" .odf
+  AddDescription "OpenDocument Database" .odb
+  AddDescription "OpenDocument Image" .odi
+  AddDescription "OpenDocument Text Master" .odm
+  AddDescription "OpenDocument Text Template" .ott
+  AddDescription "OpenDocument Spreadsheet Template" .ots
+  AddDescription "OpenDocument Presentation Template" .otp
+  AddDescription "OpenDocument Graphics Template" .otg
+  AddDescription "YAML: Yet Another Markup Language" .yaml .yml
+  AddDescription "SASS: Syntactically Awesome Stylesheets" .sass
+  AddDescription "SCSS: Sassy Cascading Style Sheet" .scss
+  AddDescription "Travis configuration" .travis
+</IfModule>
